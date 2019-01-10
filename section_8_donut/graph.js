@@ -31,11 +31,11 @@ const update = (data) => {
     // handle the exit selection
     paths.exit()
         .transition().duration(750)
-        .attr('d', arcTweenExit)
+        .attrTween('d', arcTweenExit)
         .remove();
 
     // handle the current DOM path updates
-    paths.attr('d', arcPath)
+    paths
         .transition().duration(750)
         .attrTween('d', arcTweenUpdate);
 
